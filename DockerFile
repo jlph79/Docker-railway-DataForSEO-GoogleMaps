@@ -15,7 +15,8 @@ COPY . /app
 EXPOSE 8080
 
 # Define environment variable
-ENV NAME World
+ENV DATAFORSEO_USERNAME=${DATAFORSEO_USERNAME}
+ENV DATAFORSEO_PASSWORD=${DATAFORSEO_PASSWORD}
 
 # Run both scripts when the container launches
 CMD ["python", "-c", "import GoogleMapsEndPoint_Filtered as filtered; import GoogleMapsEndPoint_raw as raw; filtered.main(); raw.main()"]
